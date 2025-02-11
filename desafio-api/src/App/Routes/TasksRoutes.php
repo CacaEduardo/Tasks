@@ -11,5 +11,4 @@ $app->group('', function (RouteCollectorProxy $group) {
     $group->put('/tasks/{id}', TasksController::class. ':update');
     $group->delete('/tasks/{id}', TasksController::class. ':delete');
 
-});
-// ->add(AuthMiddleware::class);
+})->add(AuthMiddleware::class);
