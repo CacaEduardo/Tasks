@@ -4,7 +4,7 @@ services:
       context: ./desafio-app
     container_name: frontend
     ports:
-      - "9000:9000"
+      - "3000:3000"
     networks:
       - app-network
     volumes:
@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile.api
     container_name: api
     ports:
-      - "8080:8080"
+      - "9000:9000"
     networks:
       - app-network
     volumes:
@@ -36,7 +36,7 @@ services:
     depends_on:
       - db
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      test: ["CMD", "curl", "-f", "http://localhost:9000"]
       interval: 30s
       retries: 3
 
@@ -56,7 +56,7 @@ services:
 
 networks:
   app-network:
-    driver: bridge
+    driver: bridge 
 
 volumes:
   db_data:
