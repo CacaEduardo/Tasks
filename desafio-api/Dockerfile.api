@@ -21,14 +21,13 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Definir diretório de trabalho
 WORKDIR /var/www/html
 
-# Copiar apenas os arquivos necessários para o Composer primeiro (evita cache desnecessário)
-COPY composer.json composer.lock /var/www/html/
-
-# Instalar dependências do Composer antes de copiar tudo (melhora cache do Docker)
-RUN composer install --no-dev --optimize-autoloader
-
-# Agora copiar o restante dos arquivos da aplicação
+# Copiar todos os arquivos da aplicação (incluindo o composer.json e composer.lock)
 COPY . /var/www/html/
+
+COPY .env /var/www/html/.env
+
+# Instalar dependências do Composer
+RUN composer install --no-dev --optimize-autoloader
 
 # Expor a porta 9000
 EXPOSE 9000

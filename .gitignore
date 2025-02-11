@@ -7,7 +7,6 @@ desafio-app/npm-debug.log*
 
 # Ignorar vendor e arquivos relacionados dentro de desafio-api (PHP)
 desafio-api/vendor/
-desafio-api/.env*
 
 # Ignorar arquivos de build
 desafio-app/build
