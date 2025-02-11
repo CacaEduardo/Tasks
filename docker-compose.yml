@@ -10,7 +10,7 @@ services:
     volumes:
       - ./desafio-app:/app
     environment:
-      - NODE_ENV=production 
+      - NODE_ENV=production
     command: sh -c "yarn install && yarn build && yarn start"
 
   api:
@@ -24,6 +24,7 @@ services:
       - app-network
     volumes:
       - ./desafio-api:/var/www/html
+        - /var/www/html/vendor
     environment:
       - DB_HOST=db
       - DB_NAME=desafio_db
@@ -56,7 +57,7 @@ services:
 
 networks:
   app-network:
-    driver: bridge 
+    driver: bridge
 
 volumes:
   db_data:
