@@ -27,7 +27,7 @@ COPY . /var/www/html/
 COPY .env /var/www/html/.env
 
 # Instalar dependências do Composer
-RUN composer install --no-dev --optimize-autoloader
+RUN composer update --no-dev --optimize-autoloader
 
 # Expor a porta 9000
 EXPOSE 9000
