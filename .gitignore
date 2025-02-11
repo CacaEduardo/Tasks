@@ -1,0 +1,25 @@
+# Ignorar node_modules e arquivos relacionados dentro de desafio-app (Next.js)
+desafio-app/node_modules/
+desafio-app/.next/
+desafio-app/yarn-debug.log*
+desafio-app/yarn-error.log*
+desafio-app/npm-debug.log*
+
+# Ignorar vendor e arquivos relacionados dentro de desafio-api (PHP)
+desafio-api/vendor/
+desafio-api/.env*
+
+# Ignorar arquivos de build
+desafio-app/build
+desafio-api/build
+
+# Arquivos temporários ou desnecessários
+desafio-app/.DS_Store
+desafio-api/.DS_Store
+
+# Ignorar arquivos de log de depuração
+desafio-app/npm-debug.log*
+desafio-api/npm-debug.log*
+
+# Outros arquivos ou pastas temporárias
+.desafio-app/.vercel
